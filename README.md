@@ -14,6 +14,7 @@ Puis pour l'utiliser :
 
 ```js
 import { difflibCalculation } from "@socialgouv/traducteur-legistique"
+
 const arrayResult = difflibCalculation(firstText, secondText);
 ```
 
@@ -21,11 +22,11 @@ Vous avez ensuite accès à différentes informations pour chaque objets de l'ar
 
 ```ts
 interface Item {
-  // Le paragraphe auquel la modification a été effectué
+  // Le paragraphe sur lequel la modification a été effectuée
   par: string;
-  // Si existant, la partie de la phrase qui a été ajouté
+  // Si existant, la partie de la phrase qui a été ajoutée
   new?: string;
-  // Si existant, la partie de la phrase qui a été supprimé
+  // Si existant, la partie de la phrase qui a été supprimée
   old?: string;
   // Si un paragraphe entier a été ajouté il sera dans cette variable
   newPar?: string;
@@ -46,10 +47,11 @@ if (item.new && item.old) {
 
 } else if (item.newPar) {
     // Un nouveau paragraphe a été ajouté au texte
+
 }
 ```
 
-# Developpement
+# Développement
 
 Dans le projet traducteur-legistique:
 - `yarn`
