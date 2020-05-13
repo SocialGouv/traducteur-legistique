@@ -1,39 +1,35 @@
 # Traducteur legistique
 
-Traducteur pour comparer deux textes 
+> Traducteur pour comparer deux textes 
 
-# Developpement
-
-Dans le projet traducteur-legistique:
-- `yarn`
-- `yarn test`, pour verifier que tout marche bien
-- `yarn build`
-
-
-# utilisation
+# Utilisation
 
 Pour utiliser le traducteur légistique il vous suffit de l'installer dans votre projet à l'aide de :
 
-```
-npm install --save @socialgouv/traducteur-legistique
+```sh
+$ yarn add @socialgouv/traducteur-legistique
 ```
 
 Puis pour l'utiliser :
 
-```
-arrayResult = difflibCalculation(firstText, secondText);
+```js
+import { difflibCalculation } from "@socialgouv/traducteur-legistique"
+const arrayResult = difflibCalculation(firstText, secondText);
 ```
 
 Vous avez ensuite accès à différentes informations pour chaque objets de l'array :
 
-```
-item.par : Le paragraphe auquel la modification a été effectué
-
-item.new : Si existant, la partie de la phrase qui a été ajouté
-
-item.old : Si existant, la partie de la phrase qui a été supprimé
-
-item.newPar : Si un paragraphe entier a été ajouté il sera dans cette variable 
+```ts
+interface Item {
+  // Le paragraphe auquel la modification a été effectué
+  par: string;
+  // Si existant, la partie de la phrase qui a été ajouté
+  new?: string;
+  // Si existant, la partie de la phrase qui a été supprimé
+  old?: string;
+  // Si un paragraphe entier a été ajouté il sera dans cette variable
+  newPar?: string;
+}
 ```
 
 On a donc plusieurs cas possibles :
@@ -53,4 +49,9 @@ if (item.new && item.old) {
 }
 ```
 
+# Developpement
 
+Dans le projet traducteur-legistique:
+- `yarn`
+- `yarn test`, pour verifier que tout marche bien
+- `yarn build`
