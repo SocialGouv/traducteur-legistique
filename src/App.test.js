@@ -10,7 +10,7 @@ var result = [
   { old: "caractère", par: 1, new: "" },
   { old: "d'aucune", par: 1, new: "test " },
   { new: "encore", par: 1 },
-  { new: "test encore d'ajout de phrase", par: 1 }
+  { new: "test encore d'ajout de phrase", par: 1 },
 ];
 // test should return empty array when the texts are the same
 test("we should have the same old ", () => {
@@ -18,27 +18,8 @@ test("we should have the same old ", () => {
     difflibCalculation("Ceci est le même texte", "Ceci est le même texte")
   ).toEqual([]);
 });
-// test if text is null
-test("null", () => {
-  const n = null;
-  expect(n).toBeNull();
-  expect(n).toBeDefined();
-  expect(n).not.toBeUndefined();
-  expect(n).not.toBeTruthy();
-  expect(n).toBeFalsy();
-});
-// exemple with array
-const users = [
-  { id: 1, name: "Hugo" },
-  { id: 2, name: "Guillaume" }
-];
 
-test("example 1 > we should have ids 1 and 2", () => {
-  const [first, second] = users;
-  expect(first.id).toEqual(1);
-  expect(second.id).toEqual(2);
-});
-test("example 2 > we should have par of paragraph = 1", () => {
+test("we should have par of paragraph = 1", () => {
   expect(result.some(({ par }) => par === 1)).toBe(true);
   expect(result.some(({ par }) => par === 1)).toBe(true);
 });

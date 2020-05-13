@@ -65,5 +65,5 @@ export const difflibCalculation = (firstText, secondText) => {
     arrayDiff.push(objectDiff);
   }
   // return only the full objects of the array
-  return arrayDiff.filter(value => JSON.stringify(value) !== "{}");
+  return arrayDiff.filter((value) => JSON.stringify(value) !== "{}");
 };
