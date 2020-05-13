@@ -1,3 +1,10 @@
+## [1.0.4-beta.1](https://github.com/SocialGouv/traducteur-legistique/compare/v1.0.3...v1.0.4-beta.1) (2020-05-13)
+
+
+### Bug Fixes
+
+* **pkg:** rename build folder ([e086ee8](https://github.com/SocialGouv/traducteur-legistique/commit/e086ee8d191daa5a2809ab2bb8892df7f7dc57aa))
+
 ## [1.0.3](https://github.com/SocialGouv/traducteur-legistique/compare/v1.0.2...v1.0.3) (2020-05-13)
 
 
