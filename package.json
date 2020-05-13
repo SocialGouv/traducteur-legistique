@@ -23,11 +23,12 @@
   "homepage": "https://github.com/SocialGouv/traducteur-legistique#readme",
   "keywords": [],
   "license": "Apache-2.0",
+  "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "babel src --out-file index.js --ignore '**/*.test.js'",
+    "build": "babel src -d lib --ignore '**/*.test.js'",
     "lint": "eslint src --ext .js ",
     "test": "jest"
   }
