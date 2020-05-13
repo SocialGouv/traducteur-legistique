@@ -1,6 +1,6 @@
 {
   "name": "@socialgouv/traducteur-legistique",
-  "description": "module de comparaison de deux texte pour la traduction en legistique",
+  "description": "Module de comparaison de deux texte pour la traduction en legistique",
   "version": "1.0.0",
   "author": "Fabrique numérique des Ministères Sociaux <dsi-incubateur@sg.social.gouv.fr> (https://incubateur.social.gouv.fr)",
   "devDependencies": {
