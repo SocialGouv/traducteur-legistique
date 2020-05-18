@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/SocialGouv/traducteur-legistique/compare/v1.0.4...v1.0.5) (2020-05-18)
+
+
+### Bug Fixes
+
+* typo ([#14](https://github.com/SocialGouv/traducteur-legistique/issues/14)) ([eb4435e](https://github.com/SocialGouv/traducteur-legistique/commit/eb4435ef86904c37678c83f4d50d483a54dcaf50))
+
 ## [1.0.4](https://github.com/SocialGouv/traducteur-legistique/compare/v1.0.3...v1.0.4) (2020-05-13)
 
 
