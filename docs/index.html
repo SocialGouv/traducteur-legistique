@@ -1,0 +1,76 @@
+<title>Traducteur legistique demo</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://unpkg.com/difflib@0.2.4/dist/difflib-browser.js"></script>
+<script src="src/traducteur-legistique.js"></script>
+<script>
+  function update() {
+    console.log('io')
+    let arrayModification = difflibCalculation(document.getElementById("source").innerHTML, document.getElementById(
+      "modify").innerHTML)
+    const formatResult = (item) => {
+      let sentence;
+      sentence = "Au paragraphe " + item.par + ", ";
+      if (item.new && item.old) {
+        return (
+          sentence +
+          " '" +
+          item.old +
+          "' est remplacé par " + "'" + item.new + "'"
+        );
+      } else if (item.new && !item.old) {
+        return sentence + "'" + item.new + "' est ajouté";
+      } else if (item.old && !item.new) {
+        return sentence + "< " + item.old + " > est supprimé";
+      } else if (item.newPar) {
+        return (
+          "Un nouveau paragraphe est ajouté" + " : < " + item.newPar + " >"
+        );
+      }
+    };
+
+    document.getElementById("result").innerHTML = "";
+    arrayModification.map((item, index) => {
+        document.getElementById("result").innerHTML += "<li>"+formatResult(item)+"</li>";
+    });
+  }
+
+</script>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Traducteur legistique</h1>
+      <p class="lead">Traduit en legistique les modifications d'un texte</p>
+      <a class="btn btn-primary btn-lg" href="https://github.com/SocialGouv/traducteur-legistique" role="button">Github
+        project</a>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="text-center">Texte de base</div>
+        <div id="source"
+          style="width:100%;height:230px;padding: 15px;font-size:10px;font-family:courier;text-align: justify;">
+          <p>Les données à caractère personnel contenues dans le système de gestion informatisée ne peuvent faire l'objet d'aucune interconnexion avec un autre fichier ni d'aucune cession à des tiers.Le système de gestion informatisée transmet au système d'information Schengen les informations relatives aux numéros des cartes nationales d'identité perdues, volées ou invalidées et au pays émetteur de ces titres.La lecture de la carte nationale d'identité à l'aide de procédés optiques ne peut être utilisée pour accéder à tout autre fichier ou pour y mettre en mémoire des informations mentionnées sur la carte. Toutefois, la lecture à l'aide de procédés optiques peut être utilisée pour :1° L'accès au système de gestion informatisée dans les conditions prévues à l'article 10 ;2° La consultation du fichier des personnes recherchées et du fichier des cartes perdues ou volées par les fonctionnaires de la police nationale ou les militaires de la gendarmerie nationale ayant la qualité d'officier ou d'agent de police judiciaire.</p>
+          <p>Ceci est le second paragraphe.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="text-center">Texte modifié</div>
+        <div id="modify" onKeyUp="update()"
+          style="width:100%;height:100%;padding: 15px;font-size:10px;font-family:courier;text-align: justify;border: 1px solid;"
+          contenteditable="true">
+          <p>Les données à caractère personnel contenues dans le système de gestion informatisée ne peuvent faire l'objet <span style="background-color: red;">de connexion</span> avec un autre fichier ni d'aucune cession à des tiers.Le système de gestion informatisée transmet au système d'information Schengen les informations relatives aux numéros des cartes nationales d'identité perdues, volées ou <span style="background-color: yellow;">encore</span> invalidées et au pays émetteur de ces titres.La lecture de la carte nationale d'identité à l'aide de procédés optiques ne peut être utilisée pour accéder à tout autre fichier ou pour y mettre en mémoire des informations mentionnées sur la carte. Toutefois, la lecture à l'aide de procédés optiques peut être utilisée pour :1° L'accès au système de gestion informatisée dans les conditions prévues à l'article 10 ;2° La consultation du fichier des personnes recherchées et du fichier des cartes perdues ou volées par les fonctionnaires de la police nationale ou les militaires de la gendarmerie nationale ayant la qualité d'officier ou d'agent de police judiciaire. <span style="background-color: yellow;">test encore d'ajout de phrase</span></p>
+          <p>Ceci est le <span style="background-color: red;">troisième</span> paragraphe. <span style="background-color: yellow;">Qui est plus long que celui de base.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div class="text-center" >Résultat du traducteur</div>
+        <ul id="result" style="width:100%;height:230px;padding: 15px;font-size:14px;font-family:courier;text-align: justify">
+        </ul>
+      </div>
+</body>
+<script>
+  update()
+</script>
