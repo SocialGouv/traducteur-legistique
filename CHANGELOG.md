@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/SocialGouv/traducteur-legistique/compare/v1.0.5...v1.1.0) (2020-05-19)
+
+
+### Features
+
+* add demo page ([c2a3819](https://github.com/SocialGouv/traducteur-legistique/commit/c2a38195ab7c09eeb4f875df0e95b081aabc1f6d))
+
 ## [1.0.5](https://github.com/SocialGouv/traducteur-legistique/compare/v1.0.4...v1.0.5) (2020-05-18)
 
 
