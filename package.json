@@ -5,9 +5,9 @@
   "author": "Fabrique numérique des Ministères Sociaux <dsi-incubateur@sg.social.gouv.fr> (https://incubateur.social.gouv.fr)",
   "devDependencies": {
     "@babel/cli": "^7.10.1",
-    "@babel/core": "^7.10.1",
+    "@babel/core": "^7.10.2",
     "@babel/node": "^7.10.1",
-    "@babel/preset-env": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
     "@socialgouv/eslint-config-react": "0.25.0",
     "@socialgouv/eslint-config-recommended": "^0.25.0",
     "babel-core": "^7.0.0-bridge.0",
